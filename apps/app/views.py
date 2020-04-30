@@ -102,3 +102,16 @@ def add_show(request):
             network = request.POST["network"]
         )
         return redirect("/home")
+
+def view_show(request, id):
+    ratings = Rating.objects.filter(show_id=id).order_by("-created_at")
+    show = Show.objects.get(id=id)
+    user = User.objects.get(email = request.session["email"])
+    user_rating = Rating.objects.filter(show_id = id, user_id = user.id)
+    context = {
+        "show":show,
+        "ratings":ratings,
+        "user":user,
+        "user_rating":user_rating,
+    }
+    return render(request, "app/view_show.html", context)

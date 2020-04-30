@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^home$', views.success),
     url(r'^shows/new$', views.create_show),
     url(r'^shows/add$', views.add_show),
+    url(r'^shows/(?P<id>\d+)$', views.view_show),
 ]
