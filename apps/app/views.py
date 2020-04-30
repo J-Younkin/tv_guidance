@@ -49,7 +49,7 @@ def login(request):
             request.session['email'] = request.POST['email']
             request.session['first_name']=this_user.first_name
             print("password match")
-            return redirect("/shows")
+            return redirect("/home")
         else:
             error,invalid=User.objects.create_error_message(label="login", message="Invalid credentials")
             errors=[error]
@@ -76,3 +76,29 @@ def success(request):
         "ratings":ratings,
     }
     return render(request, 'app/home.html', context)
+
+def create_show(request):
+    shows = Show.objects.all().order_by("-created_at")[:5]
+    user = User.objects.get( email = request.session["email"])
+    ratings = Rating.objects.filter(user_id = user.id)
+    context = {
+        "user":user,
+        "shows":shows,
+        "ratings":ratings,
+    }
+    print(request.POST)
+    return render(request, "app/add_show.html",context)
+
+def add_show(request):
+    errors = Show.objects.basic_validator(request.POST)
+    if len(errors):
+        for key, value in errors.items():
+            print(key, value)
+            messages.error(request, value)
+        return redirect("/shows/new")
+    else:
+        show = Show.objects.create(
+            name = request.POST["name"],
+            network = request.POST["network"]
+        )
+        return redirect("/home")
