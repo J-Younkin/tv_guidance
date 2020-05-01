@@ -146,3 +146,14 @@ def delete_show(request, id):
     show.delete()
 
     return redirect("/home")
+
+def rate_show(request, id):
+    user = User.objects.get(email = request.session["email"])
+    show = Show.objects.get(id=id)
+    user_rating = Rating.objects.filter(show_id = id, user_id = user.id)
+    Rating.objects.create(
+        rating = request.POST["rating"],
+        user = user,
+        show = show,
+    )
+    return redirect("/shows/"+id)

@@ -13,4 +13,5 @@ urlpatterns = [
     url(r'^shows/(?P<id>\d+)/edit$', views.edit_show),
     url(r'^shows/(?P<id>\d+)/delete$', views.delete_show),
     url(r'^shows/(?P<id>\d+)/update$', views.update),
+    url(r'^shows/(?P<id>\d+)/rate$', views.rate_show),
 ]
