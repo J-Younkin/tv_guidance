@@ -115,3 +115,34 @@ def view_show(request, id):
         "user_rating":user_rating,
     }
     return render(request, "app/view_show.html", context)
+
+def edit_show(request, id):
+    ratings = Rating.objects.filter(show_id=id).order_by("-created_at")
+    show = Show.objects.get(id=id)
+    user = User.objects.get( email = request.session["email"])
+    context = {
+        "ratings":ratings,
+        "show":show,
+        "user":user,
+    }
+    return render(request, "app/edit_show.html", context)
+
+def update(request, id):
+    show = Show.objects.get(id=id)
+    errors = Show.objects.basic_validator(request.POST)
+    if len(errors):
+        for key, value in errors.items():
+            messages.error(request, value)
+        return redirect("/shows/"+id+"/edit")
+    else:
+        show = Show.objects.get(id=id)
+        show.name = request.POST["name"]
+        show.network = request.POST["network"]
+        show.save()
+        return redirect("/shows/"+id)
+
+def delete_show(request, id):
+    show = Show.objects.get(id=id)
+    show.delete()
+
+    return redirect("/home")

@@ -10,4 +10,7 @@ urlpatterns = [
     url(r'^shows/new$', views.create_show),
     url(r'^shows/add$', views.add_show),
     url(r'^shows/(?P<id>\d+)$', views.view_show),
+    url(r'^shows/(?P<id>\d+)/edit$', views.edit_show),
+    url(r'^shows/(?P<id>\d+)/delete$', views.delete_show),
+    url(r'^shows/(?P<id>\d+)/update$', views.update),
 ]
