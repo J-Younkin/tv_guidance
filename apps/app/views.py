@@ -32,7 +32,7 @@ def create_user(request):
         request.session['last_name']=request.POST['last_name']
         request.session['email']=request.POST['email']
     
-        return redirect('/shows')
+        return redirect('/home')
     else:
         request.session["errors"]=errors
         return redirect('/')
@@ -76,6 +76,17 @@ def success(request):
         "ratings":ratings,
     }
     return render(request, 'app/home.html', context)
+
+def all_shows(request):
+    shows = Show.objects.all().order_by("-created_at")
+    user = User.objects.get(email = request.session["email"])
+    ratings = Rating.objects.filter(user_id = user.id)
+    context = {
+        "user":user,
+        "shows":shows,
+        "ratings":ratings,
+    }
+    return render(request, "app/all_shows.html", context)
 
 def create_show(request):
     shows = Show.objects.all().order_by("-created_at")[:5]
