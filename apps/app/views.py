@@ -80,7 +80,7 @@ def success(request):
 def all_shows(request):
     shows = Show.objects.all().order_by("-created_at")
     user = User.objects.get(email = request.session["email"])
-    ratings = Rating.objects.filter(user_id = user.id)
+    ratings = Rating.objects.filter(user_id = user.id).order_by("-created_at")
     context = {
         "user":user,
         "shows":shows,
@@ -168,3 +168,8 @@ def rate_show(request, id):
         show = show,
     )
     return redirect("/shows/"+id)
+
+def find(request):
+    print("in find method")
+    return render(request, 'app/search_shows.html',
+    {"shows": Show.objects.filter(name__startswith=request.POST['name_starts_with']) })

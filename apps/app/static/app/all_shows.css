@@ -2,12 +2,27 @@ a {
     color:#212529;
 }
 
+h3 {
+    display: inline;
+}
+
 a:hover {
     color: black;
 }
 
-.dropdown button {
-    color: #EEC10C;
+.ajax_form {
+    display: inline;
+    margin: 20px;
+}
+
+.ajax_form input {
+    border:2px solid gray;
+    border-radius: 3px;
+}
+
+.ajax_form input:focus {
+    outline: none;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(124, 124, 124, 0.6);
 }
 
 .navbar {
@@ -26,10 +41,11 @@ thead {
     border-bottom: 4px solid #EEC10C;
 }
 
-.btn:focus {
+.navbar-toggler:focus {
+    outline: none;
     border-color: #EEC10C;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(238, 193, 12, 0.6);
-  }
+}
 
 .nav-link {
     color: #EEC10C !important;

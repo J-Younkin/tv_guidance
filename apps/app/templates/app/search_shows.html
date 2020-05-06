@@ -1,0 +1,16 @@
+<table class="table table-striped table-bordered mt-4" id="show_table">
+    <thead>
+        <tr>
+            <th>Show</th>
+            <th>Network</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for show in shows %}
+        <tr>
+            <td><a href="/shows/{{show.id}}">{{show.name}}</a></td>
+            <td>{{show.network}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
