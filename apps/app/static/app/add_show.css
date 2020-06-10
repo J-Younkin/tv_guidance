@@ -44,6 +44,10 @@ thead {
     background-color: #3CA79C;
 }
 
+.btn-create:hover {
+    color: #343A40;
+}
+
 .btn-create:focus {
     outline: none;
     border-color: #3CA79C;
@@ -59,4 +63,9 @@ thead {
 .nav-link {
     color: #EEC10C !important;
     font-weight: 900;
+}
+
+.nav-link:hover {
+    color: white !important;
+    transition: .3s;
 }

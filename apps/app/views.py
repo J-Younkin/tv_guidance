@@ -42,7 +42,6 @@ def login(request):
     user = User.objects.filter(email=request.POST['email'])
     this_user = user.first()
     if len(user) > 0:
-        print(request.POST['password'])
         for key in user.__dict__.keys():
             print(key)
         if bcrypt.checkpw(request.POST['password'].encode(), this_user.password.encode()):
@@ -170,6 +169,5 @@ def rate_show(request, id):
     return redirect("/shows/"+id)
 
 def find(request):
-    print("in find method")
     return render(request, 'app/search_shows.html',
     {"shows": Show.objects.filter(name__startswith=request.POST['name_starts_with']) })

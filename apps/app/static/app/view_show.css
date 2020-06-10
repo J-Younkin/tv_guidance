@@ -20,6 +20,10 @@ thead {
 
 }
 
+.btn-edit:hover {
+    color: #343A40;
+}
+
 .btn-edit:focus {
     outline: none;
     border-color: #B74637;
@@ -62,6 +66,11 @@ thead {
 .nav-link {
     color: #EEC10C !important;
     font-weight: 900;
+}
+
+.nav-link:hover {
+    color: white !important;
+    transition: .3s;
 }
 
 .navbar-toggler:focus {

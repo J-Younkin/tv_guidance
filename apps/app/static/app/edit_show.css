@@ -45,6 +45,10 @@
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(183, 70, 55, 0.6);
 }
 
+.btn:hover {
+    color: #343A40;
+}
+
 .jumbotron {
     color: #EEC10C;
     background-color: #343A40;
@@ -59,6 +63,11 @@ thead {
 .nav-link {
     color: #EEC10C !important;
     font-weight: 900;
+}
+
+.nav-link:hover {
+    color: white !important;
+    transition: .3s;
 }
 
 .navbar-toggler:focus {

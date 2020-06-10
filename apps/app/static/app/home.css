@@ -32,3 +32,8 @@ thead {
     color: #EEC10C !important;
     font-weight: 900;
 }
+
+.nav-link:hover {
+    color: white !important;
+    transition: .3s;
+}

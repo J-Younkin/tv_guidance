@@ -12,10 +12,12 @@ a:hover {
 
 .ajax_form {
     display: inline;
-    margin: 20px;
+    margin-left: 15px;
 }
 
 .ajax_form input {
+    vertical-align: bottom;
+    padding: 2px 5px 2px 5px;
     border:2px solid gray;
     border-radius: 3px;
 }
@@ -50,4 +52,9 @@ thead {
 .nav-link {
     color: #EEC10C !important;
     font-weight: 900;
+}
+
+.nav-link:hover {
+    color: white !important;
+    transition: .3s;
 }

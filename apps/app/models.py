@@ -34,6 +34,14 @@ class UserManager(models.Manager):
                 "Invalid format for email"
             )
             errors.append(error)
+        for instance in User.objects.all():
+            if instance.email == form_data['email']:
+                error, data_is_valid = self.create_error_message(
+                    "email",
+                    "email already in use"
+                )
+                errors.append(error)
+
         if len(form_data['password']) < 8:
             error, data_is_valid = self.create_error_message(
                 "password",
