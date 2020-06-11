@@ -1,39 +1,56 @@
+body {
+    background-color: #EAEAEA;
+    font-family: 'Open Sans', sans-serif;
+}
+
 a {
-    color:#212529;
+    color: black;
 }
 
 a:hover {
     color: black;
 }
 
-.navbar {
-    border-bottom: 6px solid #EEC10C;
-}
-
-.navbar-brand {
-    font-family: 'Baloo Bhai';
-    color: #EEC10C !important;
-    font-size: 36px;
+h3 {
+    font-family: 'Open Sans', sans-serif;
 }
 
 thead {
-    color: #EEC10C;
-    background-color: #343A40;
-    border-bottom: 4px solid #EEC10C;
+    color: white;
+    background-color: #283A44;
+    border-bottom: 4px solid #B74637;
+}
+
+.icon {
+    width: 40px;
+    margin-right: 12px;
+    vertical-align: top;
+}
+
+.navbar {
+    border-bottom: 4px solid #C84B47;
+    background-color: white;
+}
+
+.navbar-brand {
+    font-family: 'Comfortaa', cursive;
+    color: #283A44 !important;
+    font-size: 32px;
 }
 
 .navbar-toggler:focus {
     outline: none;
-    border-color: #EEC10C;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(238, 193, 12, 0.6);
+    border-color: #B74637;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(200, 75, 71, 0.6);
 }
 
 .nav-link {
-    color: #EEC10C !important;
-    font-weight: 900;
+    font-family: 'Comfortaa', cursive;
+    color: #283A44 !important;
+    font-size: 18px;
 }
 
 .nav-link:hover {
-    color: white !important;
+    color: #B74637 !important;
     transition: .3s;
 }

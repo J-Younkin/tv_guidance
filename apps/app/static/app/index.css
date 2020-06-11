@@ -1,24 +1,32 @@
 body {
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #EAEAEA;
 }
 
 li {
     font-weight: 800;
-    color: #B74637;
+    color: #C84B47;
 }
 
 h2 {
-    color: #343A40;
+    color: #283A44;
+}
+
+.icon {
+    width: 40px;
+    margin-right: 12px;
+    vertical-align: top;
 }
 
 .navbar {
-    border-bottom: 6px solid #EEC10C;
+    border-bottom: 4px solid #C84B47;
+    background-color: white;
 }
 
 .navbar-brand {
-    font-family: 'Baloo Bhai';
-    color: #EEC10C !important;
-    font-size: 36px;
+    font-family: 'Comfortaa';
+    color: #283A44;
+    font-size: 32px;
 }
 
 .form-control:focus {
@@ -27,6 +35,6 @@ h2 {
 }
 
 .btn {
-    color: #EEC10C;
-    background-color: #343A40;
+    color: white;
+    background-color: #283A44;
 }

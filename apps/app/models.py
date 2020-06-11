@@ -19,13 +19,13 @@ class UserManager(models.Manager):
         if len(form_data['first_name']) < 2:
             error, data_is_valid = self.create_error_message(
                 "first_name",
-                "First name required ( 2 character minimum )"
+                "First name required"
             )
             errors.append(error)
         if len(form_data['last_name']) < 2:
             error, data_is_valid = self.create_error_message(
                 "last_name",
-                "Last name required ( 2 character minimum )"
+                "Last name required"
             )
             errors.append(error)
         if not EMAIL_REGEX.match(form_data['email']):
@@ -45,7 +45,7 @@ class UserManager(models.Manager):
         if len(form_data['password']) < 8:
             error, data_is_valid = self.create_error_message(
                 "password",
-                "Password required ( 8 character minimum )"
+                "Password required"
             )
             errors.append(error)
         if(form_data['confirm']) != (form_data['password']):
