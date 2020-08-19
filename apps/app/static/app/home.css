@@ -1,6 +1,6 @@
 body {
-    background-color: #EAEAEA;
     font-family: 'Open Sans', sans-serif;
+    background-color: #EAEAEA;
 }
 
 a {
@@ -15,42 +15,39 @@ h3 {
     font-family: 'Open Sans', sans-serif;
 }
 
+table {
+    background-color: white !important;
+}
+
 thead {
     color: white;
     background-color: #283A44;
     border-bottom: 4px solid #B74637;
 }
 
-.icon {
-    width: 40px;
-    margin-right: 12px;
-    vertical-align: top;
-}
-
-.navbar {
-    border-bottom: 4px solid #C84B47;
-    background-color: white;
-}
-
-.navbar-brand {
+.brand {
     font-family: 'Comfortaa', cursive;
-    color: #283A44 !important;
+    color: #B74637 !important;
     font-size: 32px;
+    margin-top: 18px;
 }
 
-.navbar-toggler:focus {
-    outline: none;
-    border-color: #B74637;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(200, 75, 71, 0.6);
+.topbar {
+    background-color: #283A44;
 }
 
 .nav-link {
+    margin-bottom: 18px;
     font-family: 'Comfortaa', cursive;
-    color: #283A44 !important;
+    color: white;
     font-size: 18px;
 }
 
+.nav-link.active {
+    color: #B74637;
+}
+
 .nav-link:hover {
-    color: #B74637 !important;
+    color: #B74637;
     transition: .3s;
 }

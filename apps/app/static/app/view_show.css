@@ -3,27 +3,37 @@ body {
     background-color: #EAEAEA;
 }
 
-.navbar {
-    border-bottom: 4px solid #C84B47;
-    background-color: white;
-}
-
-.navbar-brand {
-    font-family: 'Comfortaa', cursive;
-    color: #283A44 !important;
-    font-size: 32px;
-}
-
-.icon {
-    width: 40px;
-    margin-right: 12px;
-    vertical-align: top;
+table {
+    background-color: white !important;
 }
 
 thead {
     color: white;
     background-color: #283A44;
     border-bottom: 4px solid #B74637;
+}
+
+.brand {
+    font-family: 'Comfortaa', cursive;
+    color: #B74637 !important;
+    font-size: 32px;
+    margin-top: 18px;
+}
+
+.topbar {
+    background-color: #283A44;
+}
+
+.nav-link {
+    margin-bottom: 18px;
+    font-family: 'Comfortaa', cursive;
+    color: white;
+    font-size: 18px;
+}
+
+.nav-link:hover {
+    color: #B74637;
+    transition: .3s;
 }
 
 .btn-edit {
@@ -77,17 +87,6 @@ thead {
 
 .divider {
     border: 3px solid #283A44;
-}
-
-.nav-link {
-    font-family: 'Comfortaa', cursive;
-    color: #283A44 !important;
-    font-size: 18px;
-}
-
-.nav-link:hover {
-    color: #B74637 !important;
-    transition: .3s;
 }
 
 .navbar-toggler:focus {

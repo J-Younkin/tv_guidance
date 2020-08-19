@@ -12,21 +12,33 @@ h2 {
     color: #283A44;
 }
 
-.icon {
-    width: 40px;
-    margin-right: 12px;
-    vertical-align: top;
+.topbar {
+    background-color: #283A44;
+
 }
 
-.navbar {
-    border-bottom: 4px solid #C84B47;
-    background-color: white;
-}
-
-.navbar-brand {
-    font-family: 'Comfortaa';
-    color: #283A44;
+.brand {
+    font-family: 'Comfortaa', cursive;
+    color: #B74637 !important;
     font-size: 32px;
+    margin-top: 18px;
+    /* margin-bottom: 42px; */
+}
+
+.tagline {
+    font-family: 'Comfortaa', cursive;
+    color: white !important;
+    font-size: 18px;
+    margin: 10px 10px 24px 10px;
+}
+
+.parallax {
+    background-image: url(https://source.unsplash.com/HprPUHnjDgk);
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .form-control:focus {

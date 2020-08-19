@@ -3,27 +3,41 @@ body {
     background-color: #EAEAEA;
 }
 
+table {
+    background-color: white !important;
+}
+
 thead {
     color: white;
     background-color: #283A44;
     border-bottom: 4px solid #B74637;
 }
 
-.icon {
-    width: 40px;
-    margin-right: 12px;
-    vertical-align: top;
+.topbar {
+    background-color: #283A44;
 }
 
-.navbar {
-    border-bottom: 4px solid #C84B47;
-    background-color: white;
-}
-
-.navbar-brand {
+.brand {
     font-family: 'Comfortaa', cursive;
-    color: #283A44 !important;
+    color: #B74637 !important;
     font-size: 32px;
+    margin-top: 18px;
+}
+
+.nav-link {
+    margin-bottom: 18px;
+    font-family: 'Comfortaa', cursive;
+    color: white;
+    font-size: 18px;
+}
+
+.nav-link.active {
+    color: #B74637;
+}
+
+.nav-link:hover {
+    color: #B74637;
+    transition: .3s;
 }
 
 .display-4 {
@@ -74,17 +88,6 @@ thead {
 .jumbotron {
     color: #283A44;
     background-color: white;
-}
-
-.nav-link {
-    font-family: 'Comfortaa', cursive;
-    color: #283A44 !important;
-    font-size: 18px;
-}
-
-.nav-link:hover {
-    color: #B74637 !important;
-    transition: .3s;
 }
 
 .navbar-toggler:focus {

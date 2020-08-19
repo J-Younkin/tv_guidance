@@ -13,36 +13,16 @@
     <title>Edit show</title>
 </head>
 <body>
-    <nav class="navbar navbar-light navbar-expand-md">
-        <span class="navbar-brand"><img class="icon" src="{% static "app/tv-screen.png" %}" alt="My image">TV guidance</span>
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#myNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="myNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a href="/home" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/shows/all" class="nav-link">All Shows</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/logout" class="nav-link">Sign Out</a>
-                </li>
-            </ul>
+    <div class="topbar">
+        <div class="d-flex justify-content-center">
+            <a class="brand">TV guidance</a>
         </div>
-    </nav>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                {% if messages %}
-                    {% for message in messages %}
-                        <h3 class="error">{{message}}</h3>
-                    {% endfor %}
-                {% endif %}    
-            </div>
-            <div class="col-lg-6"></div>
-        </div>
+        <nav class="nav justify-content-center">
+            <a class="nav-link" href="/home">Home</a>
+            <a class="nav-link" href="/shows/all">All Shows</a>
+            <a class="nav-link active" href="javascript:void(0)">Add a Show</a>
+            <a class="nav-link" href="/logout">Sign Out</a>
+        </nav>
     </div>
     <div class="container mt-5">
         <div class="row">
@@ -59,13 +39,22 @@
                             <label for="network">Network:</label>
                             <input type="text" class="form-control" name="network">
                         </div>
-                        <button type="submit" class="btn btn-create">Create</button>
+                        <div class="col-6">
+                            <ul>
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <li class="error">{{message}}</li>
+                                {% endfor %}
+                            {% endif %} 
+                            </ul>   
+                        </div>
+                        <button type="submit" class="btn btn-create">Submit</button>
                     </form>
                 </div>
             </div>
             <div class="col-lg-6">
             <h3>Recently Added</h3>
-                <table class="table table-striped table-bordered mt-4">
+                <table class="table table-bordered mt-4">
                     <thead>
                         <tr>
                             <th>Show</th>

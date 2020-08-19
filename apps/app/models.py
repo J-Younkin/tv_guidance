@@ -69,9 +69,9 @@ class ShowManager(models.Manager):
     def basic_validator(self, postData):
         errors = {}
         if len(postData["name"]) == 0:
-            errors["name"] = "* Title is required"
+            errors["name"] = "Title is required"
         if len(postData["network"]) == 0:
-            errors["network"] = "* Network is required"
+            errors["network"] = "Network is required"
         return errors
 
 class Show(models.Model):
