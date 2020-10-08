@@ -12,7 +12,16 @@ a:hover {
 }
 
 table {
+    border-radius: 6px !important;
     background-color: white !important;
+}
+
+table th:first-child{
+    border-radius: 6px 0 0 0;
+}
+  
+table th:last-child{
+    border-radius: 0 6px 0 0;
 }
 
 thead {

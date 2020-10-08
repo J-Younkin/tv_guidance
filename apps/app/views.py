@@ -35,7 +35,7 @@ def create_user(request):
         return redirect('/home')
     else:
         request.session["errors"]=errors
-        return redirect('/')
+        return redirect('/register')
 
 def login(request):
     request.session['errors'] = []
@@ -54,12 +54,24 @@ def login(request):
             errors=[error]
             request.session["errors"]=errors
             print("failed password") 
-            return redirect('/')
+            return redirect("/")
     else:
         error,invalid=User.objects.create_error_message(label="login", message="Invalid credentials")
         errors=[error]
         request.session["errors"]=errors
         return redirect("/")
+
+def register(request):
+    if "errors" in request.session:
+        errors = request.session["errors"]
+        del request.session["errors"]
+    else:
+        errors = []
+        
+    context = {
+        "errors": errors
+    }
+    return render(request, "app/register.html", context)
 
 def logout(request):
     del request.session["email"]

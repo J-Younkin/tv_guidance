@@ -27,8 +27,8 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-lg-6">
-                <div class="jumbotron">
-                    <h1 class="display-4">{{show.name}}</h1>
+                <div class="jumbotron shadow">
+                    <h1 class="display-4 mb-3">{{show.name}}</h1>
                     <p class="lead">Network: {{show.network}}</p>
                     <a href="/shows/{{show.id}}/edit" class="btn btn-edit">Edit</a>
                     <hr class="divider my-4">
@@ -36,9 +36,7 @@
                     
                     {%  for user in user_rating %}
 
-                    <br>
-                    <h4>Your Rating</h4>
-                    <br>
+                    <h4 class="my-4">Your Rating</h4>
                     <h2>{{user.rating}} Stars</h2>
                     
                     {%  endfor %}
@@ -66,11 +64,11 @@
             </div>
             <div class="col-lg-6">
                 <h3>Ratings for {{show.name}}</h3>
-                <table class="table table-bordered">
+                <table class="table shadow">
                     <thead>
                         <tr>
                             <th>Stars</th>
-                            <th>User</th>
+                            <th>Viewer</th>
                         </tr>
                     </thead>
                     <tbody>

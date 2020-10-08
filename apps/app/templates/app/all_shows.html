@@ -12,6 +12,8 @@
 
     {% load static %}
     <link rel="stylesheet" href="{% static 'app/all_shows.css' %}">
+    <script src="{% static 'app/all_shows.js' %}"></script>
+
     <title>Shows</title>
 </head>
 <body>
@@ -34,7 +36,7 @@
                     {% csrf_token %}
                     <input type='text' name='name_starts_with' placeholder="Search by title" id='ajax_search' />
                 </form>
-                <table class="table table-bordered mt-4" id="show_table">
+                <table class="table shadow mt-4" id="show_table">
                     <thead>
                         <tr>
                             <th>Show</th>
@@ -53,7 +55,7 @@
             </div>
             <div class="col-md-5 mt-5">
                 <h3>{{user.first_name}}'s Ratings</h3>
-                <table class="table table-bordered mt-4">
+                <table class="table shadow mt-4">
                     <thead>
                         <tr>
                             <th>Show</th>

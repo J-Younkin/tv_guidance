@@ -27,7 +27,7 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-lg-6">
-                <div class="jumbotron">
+                <div class="jumbotron shadow">
                     <h1 class="display-4">Add a Show</h1>
                     <form action="/shows/add" method="POST">
                         {% csrf_token %}
@@ -54,7 +54,7 @@
             </div>
             <div class="col-lg-6">
             <h3>Recently Added</h3>
-                <table class="table table-bordered mt-4">
+                <table class="table shadow mt-4">
                     <thead>
                         <tr>
                             <th>Show</th>

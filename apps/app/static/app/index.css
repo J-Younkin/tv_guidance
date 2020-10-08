@@ -57,7 +57,7 @@ h3 {
 
 .parallax {
     background-image: url("remote1.jpg");
-    min-height: 500px;
+    min-height: 440px;
     background-attachment: fixed;
     background-position: top;
     background-repeat: no-repeat;
