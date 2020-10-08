@@ -12,6 +12,10 @@ h2 {
     color: #283A44;
 }
 
+h3 {
+    font-family: 'Comfortaa', cursive;
+}
+
 .topbar {
     background-color: #283A44;
 
@@ -19,22 +23,50 @@ h2 {
 
 .brand {
     font-family: 'Comfortaa', cursive;
+    font-weight: bold;
     color: #B74637 !important;
     font-size: 32px;
     margin-top: 18px;
-    /* margin-bottom: 42px; */
 }
 
 .tagline {
+    display: block;
     font-family: 'Comfortaa', cursive;
     color: white !important;
     font-size: 18px;
     margin: 10px 10px 24px 10px;
 }
 
+
+.signin {
+    font-family: 'Comfortaa', cursive;
+    color: white;
+    font-size: 20px;
+    transition: .3s;
+}
+
+.signin:hover {
+    text-decoration: none;
+    color: #B74637;
+    transition: .3s;
+}
+
+.dropdown-item:focus {
+    background-color: #283A44;
+}
+
 .parallax {
-    background-image: url(https://source.unsplash.com/HprPUHnjDgk);
+    background-image: url("remote1.jpg");
     min-height: 500px;
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax2 {
+    background-image: url("remote_white.jpg");
+    min-height: 400px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -47,6 +79,17 @@ h2 {
 }
 
 .btn {
+    font-family: 'Comfortaa', cursive;
     color: white;
     background-color: #283A44;
+    transition: .3s;
+}
+
+.btn:focus {
+    background-color: #283A44;
+} 
+
+.btn:hover {
+    color: #B74637;
+    transition: .3s;
 }

@@ -1,0 +1,74 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #EAEAEA;
+}
+
+li {
+    font-weight: 800;
+    color: #C84B47;
+}
+
+h2 {
+    color: #283A44;
+}
+
+.topbar {
+    background-color: #283A44;
+
+}
+
+.brand {
+    font-family: 'Comfortaa', cursive;
+    color: #B74637 !important;
+    font-size: 32px;
+    margin-top: 18px;
+}
+
+.tagline {
+    display: block;
+    font-family: 'Comfortaa', cursive;
+    color: white !important;
+    font-size: 18px;
+    margin: 10px 10px 24px 10px;
+}
+
+.form-control:focus {
+    border-color: #7c7c7c;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(124, 124, 124, 0.6);
+}
+
+.btn {
+    color: white;
+    background-color: #283A44;
+    transition: .3s;
+}
+
+.goback {
+    font-family: 'Comfortaa', cursive;
+    color: white;
+    font-size: 20px;
+    transition: .3s;
+}
+
+.goback:hover {
+    text-decoration: none;
+    color: #B74637;
+    transition: .3s;
+}
+
+.btn:hover {
+    color: #B74637;
+    transition: .3s;
+}
+
+.sidepic {
+    background-image: url("remote2.jpg");
+    min-height: 615px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 150%;
+}
+
+#regCon {
+    margin-top: 70px;
+}

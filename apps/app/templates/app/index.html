@@ -11,134 +11,38 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'app/index.css' %}"> 
 
-    <title>Login</title>
+    <title>Welcome</title>
 </head>
 <body>
-    <div class="parallax"></div>
     <div class="topbar fixed-top">
-        <div class="d-flex justify-content-center">
-            <a class="brand">TV guidance</a>
-        </div>
-        <div class="d-flex justify-content-center">
-            <a class="tagline">Watch more</a>
-            <a class="tagline">|</a>
-            <a class="tagline">Search less</a>
-        </div>
-    </div>
-    <div class="container py-5">
-        <div class="row">
-            <div class="col-lg-6 px-8">
-                <div class="container" id="regCon">
-                    <h2 class="my-4 text-center">New User? <span class="h5 text-muted">register</span></h2>
-                    <hr class="mb-5">
-                    <form action="/create" method="POST">
-                        {% csrf_token %}
-                        <div class="form-group">
-                            <div class="col-8 offset-2">
-                                <input type="text" class="form-control" name="first_name" placeholder="First Name">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-8 offset-2">
-                                <ul>
-                                    {% for e in errors %}
-                                        {% if e.label == "first_name" %}
-                                            <li>{{e.message}}</li>
-                                        {% endif %}
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-8 offset-2">
-                                <input type="text" class="form-control" name="last_name" placeholder="Last Name">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-8 offset-2">
-                                <ul>
-                                    {% for e in errors %}
-                                        {% if e.label == "last_name" %}
-                                            <li>{{e.message}}</li>
-                                        {% endif %}
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                                <div class="col-8 offset-2"> 
-                                    <input type="text" class="form-control" name="email" placeholder="Email">
-                                </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-8 offset-2">
-                                <ul>
-                                    {% for e in errors %}
-                                        {% if e.label == "email" %}
-                                            <li>{{e.message}}</li>
-                                        {% endif %}
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                                <div class="col-8 offset-2"> 
-                                    <input type="password" class="form-control" name="password" placeholder="Password">
-                                </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-8 offset-2">
-                                <ul>
-                                    {% for e in errors %}
-                                        {% if e.label == "password" %}
-                                            <li>{{e.message}}</li>
-                                        {% endif %}
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-8 offset-2"> 
-                                <input type="password" class="form-control" name="confirm" placeholder="Confirm Password">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-8 offset-2">
-                                <ul>
-                                    {% for e in errors %}
-                                        {% if e.label == "confirm" %}
-                                            <li>{{e.message}}</li>
-                                        {% endif %}
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="form-group"> 
-                            <div class="col-8 offset-2 mb-5">
-                                <button type="submit" class="btn btn-lg btn-block ">Register</button>
-                            </div>
-                        </div>
-                    </form>
+        <div class="row align-items-center">
+            <div class="col-2">
+            </div>
+            <div class="col-8">
+                <div class="d-flex justify-content-center">
+                    <a class="brand">TV guidance</a>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <a class="tagline">Watch more</a>
+                    <a class="tagline">|</a>
+                    <a class="tagline">Search less</a>
                 </div>
             </div>
-            <div class="col-lg-6 px-8">
-                <div class="container" id="logCon">
-                    <h2 class="my-4 text-center">Sign In</h2>
-                    <hr class="mb-5">
-                    <form action="/login" method="POST">
-                        {%csrf_token%}
-                        <div class="form-group">
-                            <div class="col-8 offset-2"> 
-                                <input type="text" class="form-control" name="email" placeholder="Email">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-8 offset-2"> 
-                                <input type="password" class="form-control" name="password" placeholder="Password">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-8 offset-2">
+            <div class="col-2">
+                <div class="d-flex justify-content-center">
+                    <div class="dropdown">
+                        <a class="signin" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Sign in
+                        </a>
+                        <div class="dropdown-menu">
+                            <form class="px-4 py-3" action="/login" method="POST">
+                                {%csrf_token%}
+                                <div class="form-group">
+                                    <input type="Email" class="form-control" id="exampleDropdownFormEmail1" name="email" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <input type="Password" class="form-control" id="exampleDropdownFormPassword1" name="password" placeholder="Password">
+                                </div>
                                 <ul>
                                     {% for e in errors %}
                                         {% if e.label == "login" %}
@@ -146,18 +50,45 @@
                                         {% endif %}
                                     {% endfor %}
                                 </ul>
-                            </div>
+                                <button type="submit" class="btn">Sign in</button>
+                            </form>
+                                <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/register">New around here? Sign up</a>
                         </div>
-                        <div class="form-group"> 
-                            <div class="col-8 offset-2 mb-4">
-                                <button type="submit" class="btn btn-lg btn-block">Login</button>
-                            </div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="parallax"></div>
+
+    <section id="icons">
+        <div class="container text-center my-5">
+            <div class="row">
+                <div class="col-md-4 p-3">
+                    <img src="static/app/share.png" alt="" class="img-fluid d-none d-md-inline mb-3">
+                    <h3>Share</h3>
+                    <p class="lead">Introduce other members to the shows you love</p>
+                </div>
+                <div class="col-md-4 p-3">
+                    <img src="static/app/rank.png" alt="" class="img-fluid d-none d-md-inline mb-3">
+                    <h3>Rank</h3>
+                    <p class="lead">Shine a light on a great show or steer someone clear of a bad one</p>
+                </div>
+                <div class="col-md-4 p-3">
+                    <img src="static/app/discover.png" alt="" class="img-fluid d-none d-md-inline mb-3">
+                    <h3>Discover</h3>
+                    <p class="lead">Let the TVG community help you find your next favorite show</p>
+                </div>
+            </div>
+            <a class="btn btn-lg btn-block mt-5"href="/register" class="btn btn-lg btn-block mt-5">Join the TV guidance community !</a>
+        </div>
+    </section>
+
+    <div class="parallax2"></div>
+
+    <div class="footer d-flex justify-content-center">Icons made by<a href="https://www.flaticon.local/authors/freepik" title="Freepik" class="mx-2">Freepik</a>from<a href="https://www.flaticon.local/" title="Flaticon" class="mx-2"> www.flaticon.local</a></div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
