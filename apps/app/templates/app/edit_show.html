@@ -40,19 +40,19 @@
                             <label for="network">Network:</label>
                             <input type="text" class="form-control" name="network" value="{{show.network}}">
                         </div>
+                        <ul>
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <li>{{message}}</li>
+                                {% endfor %}
+                            {% endif %}    
+                        </ul>
                         <button type="submit" class="btn btn-update">Update</button>
                     </form>
                     <form action="/shows/{{show.id}}/delete" method="POST">
                         {% csrf_token %}
                         <button type="submit" class="btn btn-delete">Delete</button>
                     </form>
-                    <div class="col-sm-5">
-                        {% if messages %}
-                            {% for message in messages %}
-                                <h3>{{message}}</h3>
-                            {% endfor %}
-                        {% endif %}    
-                    </div>
                 </div>
             </div>           
             <div class="col-lg-6">
