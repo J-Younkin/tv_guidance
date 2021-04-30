@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.db.models import Avg
 from . models import *
 import bcrypt
 
@@ -16,10 +17,10 @@ def index(request):
     return render(request, 'app/index.html', context)
 
 def create_user(request):
-    print(request.POST)
+    print('request.POST =',request.POST)
     request.session['errors'] = []
     data_is_valid, errors = User.objects.validate(request.POST)
-    print ('data is valid',data_is_valid)
+    print ('data is valid =',data_is_valid)
     print (errors)
     if  data_is_valid:    
         loginreg = User.objects.create(
@@ -101,7 +102,7 @@ def all_shows(request):
 
 def create_show(request):
     shows = Show.objects.all().order_by("-created_at")[:5]
-    user = User.objects.get( email = request.session["email"])
+    user = User.objects.get(email = request.session["email"])
     ratings = Rating.objects.filter(user_id = user.id)
     context = {
         "user":user,
@@ -109,7 +110,7 @@ def create_show(request):
         "ratings":ratings,
     }
     print(request.POST)
-    return render(request, "app/add_show.html",context)
+    return render(request, "app/add_show.html", context)
 
 def add_show(request):
     errors = Show.objects.basic_validator(request.POST)
@@ -127,6 +128,7 @@ def add_show(request):
 
 def view_show(request, id):
     ratings = Rating.objects.filter(show_id=id).order_by("-created_at")
+    avg_rating = Rating.objects.filter(show_id=id).aggregate(Avg('rating'))
     show = Show.objects.get(id=id)
     user = User.objects.get(email = request.session["email"])
     user_rating = Rating.objects.filter(show_id = id, user_id = user.id)
@@ -135,6 +137,7 @@ def view_show(request, id):
         "ratings":ratings,
         "user":user,
         "user_rating":user_rating,
+        "avg_rating":avg_rating,
     }
     return render(request, "app/view_show.html", context)
 
